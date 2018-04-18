@@ -1,8 +1,18 @@
 __author__ = "Thomas Hansen (thsh1977@gmail.com)"
 __version__ = "$Revision: 1.4 $"
-__date__ = "$Date: 2018-03-27 21:57:19 $"
+__date__ = "$Date: 2018-04-18 12:05:19 $"
 __copyright__ = "Copyright (c) 2018 Thomas Hansen"
 __license__ = "Python"
+
+""" Batch insert element in XML files
+
+Inserts an XML element 'abstract' at a specified place
+
+Usage: 
+(1) Make sure you have the directory 'xmlfiles' containing the files
+    you want to modify
+(2) Run: python3 batch-insert-xml-element.py
+"""
 
 from xml.etree import ElementTree as ET
 import os
