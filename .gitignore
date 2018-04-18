@@ -1,0 +1,5 @@
+#avoid these directories
+
+xmlfiles
+
+#avoid these files
