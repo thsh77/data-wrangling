@@ -37,9 +37,13 @@ def extract_section_from_file(data):
     #    for paragraph in paragraphs:
     #        if paragraph is not None:
     folders = e.findall('folder[2]')
-    paragraphs = [f.findall('.//{http://www.w3.org/1999/xhtml}p') for f in folders]
-    
-    return e.tag+':', place.text, [f.attrib['name'] for f in folders], paragraphs
+    paragraphs = e.findall('folder[2]//{http://www.w3.org/1999/xhtml}p')
+        
+
+
+    #paragraphs = [f.findall('.//{http://www.w3.org/1999/xhtml}p') for f in folders]
+  
+    return e.tag+':', place.text, [f.attrib['name'] for f in folders], [p.text for p in paragraphs]
         
 def main():
 
