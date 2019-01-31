@@ -36,15 +36,21 @@ def extract_section_from_file(data):
     #    chapter = folder.attrib['name']
     #    for paragraph in paragraphs:
     #        if paragraph is not None:
-    folders = e.findall('folder[2]')
-    paragraphs = e.findall('folder[2]//{http://www.w3.org/1999/xhtml}p')
+    folders = e.findall('folder')
+    paragraphs = e.findall('folder//{http://www.w3.org/1999/xhtml}p')
+    #for p in paragraphs:
+    #    if p.text is not None:
+    #        return p.text
+            
+    
+    #return place.text, [f.attrib['name'] for f in folders], p.text
         
 
 
     #paragraphs = [f.findall('.//{http://www.w3.org/1999/xhtml}p') for f in folders]
   
-    return e.tag+':', place.text, [f.attrib['name'] for f in folders], [p.text for p in paragraphs]
-        
+    #return e.tag+':', place.text, [f.attrib['name'] for f in folders], [p.text for p in paragraphs]
+    return e.tag+':', place.text, [f.attrib['name'] for f in folders], [p.text for p in paragraphs]    
 def main():
 
     source_directory = 'xmlfiles'
