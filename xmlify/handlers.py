@@ -31,7 +31,7 @@ class HTMLRenderer(Handler):
     markup as used in HTML documents.
     """
     def start_document(self):
-        print('<html><head><title>...</title></head><body>')
+        print('<html><head><meta charset="utf-8"/><title>...</title></head><body>')
     def end_document(self):
         print('</body></html>')
     def start_paragraph(self):
@@ -60,5 +60,11 @@ class HTMLRenderer(Handler):
         return '<a href="{}">{}</a>'.format(match.group(1), match.group(1))
     def sub_mail(self, match):
         return '<a href="mailto:{}">{}</a>'.format(match.group(1), match.group(1))
+    def sub_linefeed(self, match):
+        return '\n\n<pb/>\n\n'
+    def sub_soft_hyphen(self, match):
+        return '-'
+    def sub_line_count(self, match):
+        return 'HALLØJSA'
     def feed(self, data):
         print(data)
